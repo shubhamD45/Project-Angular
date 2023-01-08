@@ -1,14 +1,8 @@
-<body>
-    <div class="btn">
-        <button>logout</button>
-    </div>
-    <mat-drawer-container class="example-container">
-        <mat-drawer mode="side" opened class="drawer">Drawer content</mat-drawer>
-        <mat-drawer-content>Main content <router-outlet></router-outlet>
-        </mat-drawer-content>
+<div class="btn">
 
-    </mat-drawer-container>
-
-
-
-</body>
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-raised-button color="warn">Logout</button>
+</div>
+<router-outlet></router-outlet>

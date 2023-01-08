@@ -35,7 +35,9 @@ import { ViewappComponent } from './modules/ah/viewapp/viewapp.component';
 import { SanctionComponent } from './modules/ah/sanction/sanction.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,8 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
     LoginComponent,
     ApplicationsComponent,
     ViewappComponent,
-    SanctionComponent
+    SanctionComponent,
+    AddemployeeComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -72,7 +75,10 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
     MatSidenavModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatButtonModule,
+
   ]
 
 })

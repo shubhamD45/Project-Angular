@@ -24,6 +24,7 @@ import { AhComponent } from './modules/ah/ah.component';
 import { ApplicationsComponent } from './modules/cm/applications/applications.component';
 import { ViewappComponent } from './modules/ah/viewapp/viewapp.component';
 import { SanctionComponent } from './modules/ah/sanction/sanction.component';
+import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.component';
 
 
 const routes: Routes = [
@@ -52,7 +53,13 @@ const routes: Routes = [
           { path: 'uploaddocs', component: UploadDocsComponent }
         ]
       },
-      { path: 'admin', component: AdminComponent },
+      {
+        path: 'admin', component: AdminComponent,
+
+        children: [
+          { path: 'addemployee', component: AddemployeeComponent }
+        ]
+      },
       {
         path: 'oe', component: OeComponent,
         children: [

@@ -17,6 +17,9 @@ export class EmployeeService {
     lastname: '',
     role: '',
     profile: '',
+    gender: '',
+    birthdate: '',
+    email: ''
   }
 
   constructor(private http: HttpClient) { }
@@ -27,6 +30,8 @@ export class EmployeeService {
     return this.http.get<Employee>(`${this.url1}/${id}/${password}`);
   }
 
-
+  public saveEmployee(emp: Employee): Observable<Employee> {
+    return this.http.post<Employee>(`${this.url1}`, emp);
+  }
 
 }
