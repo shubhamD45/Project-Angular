@@ -1,0 +1,12 @@
+.photo {
+    border-radius: 750px;
+
+}
+
+body {
+    background-image: linear-gradient(to right, #C8E3F6, #F0F5FB);
+    height: 100%;
+    width: 100%;
+    padding-bottom: 30px;
+
+}

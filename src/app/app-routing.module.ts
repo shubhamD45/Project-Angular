@@ -1,0 +1,84 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { AboutUsComponent } from './Dashboard/about-us/about-us.component';
+import { ContactUsComponent } from './Dashboard/contact-us/contact-us.component';
+import { EMICalculatorComponent } from './Dashboard/emicalculator/emicalculator.component';
+import { FAQComponent } from './Dashboard/faq/faq.component';
+import { HomeComponent } from './Dashboard/home/home.component';
+
+import { LoginComponent } from './login/login.component';
+import { NavigationbarComponent } from './Dashboard/navigationbar/navigationbar.component';
+
+import { ModulesComponent } from './modules/modules.component';
+import { AdminComponent } from './modules/admin/admin.component';
+import { CmComponent } from './modules/cm/cm.component';
+import { OeComponent } from './modules/oe/oe.component';
+import { ViewENComponent } from './modules/oe/view-en/view-en.component';
+import { AddEnquiryComponent } from './modules/re/add-enquiry/add-enquiry.component';
+import { ReComponent } from './modules/re/re.component';
+import { RegisterComponent } from './modules/re/register/register.component';
+import { UploadDocsComponent } from './modules/re/upload-docs/upload-docs.component';
+import { ViewEnquiryComponent } from './modules/re/view-enquiry/view-enquiry.component';
+import { AhComponent } from './modules/ah/ah.component';
+import { ApplicationsComponent } from './modules/cm/applications/applications.component';
+import { ViewappComponent } from './modules/ah/viewapp/viewapp.component';
+import { SanctionComponent } from './modules/ah/sanction/sanction.component';
+
+
+const routes: Routes = [
+
+  {
+    path: '', component: NavigationbarComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'aboutus', component: AboutUsComponent },
+      { path: 'contactus', component: ContactUsComponent },
+      { path: 'faq', component: FAQComponent },
+      { path: 'emi', component: EMICalculatorComponent },
+
+    ]
+  },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'modules', component: ModulesComponent,
+    children: [
+      {
+        path: 're', component: ReComponent,
+        children: [
+          { path: 'addenquiry', component: AddEnquiryComponent },
+          { path: 'viewenquiry', component: ViewEnquiryComponent },
+          { path: 'register', component: RegisterComponent },
+          { path: 'uploaddocs', component: UploadDocsComponent }
+        ]
+      },
+      { path: 'admin', component: AdminComponent },
+      {
+        path: 'oe', component: OeComponent,
+        children: [
+          { path: 'viewen', component: ViewENComponent }
+        ]
+      },
+      {
+        path: 'cm', component: CmComponent,
+        children: [
+          { path: 'app', component: ApplicationsComponent }
+        ]
+      },
+      {
+        path: 'ah', component: AhComponent,
+        children: [
+          { path: 'viewapp', component: ViewappComponent },
+          { path: 'sanction', component: SanctionComponent }
+        ]
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
