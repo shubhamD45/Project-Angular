@@ -53,13 +53,14 @@ const routes: Routes = [
           { path: 'uploaddocs', component: UploadDocsComponent }
         ]
       },
+
       {
         path: 'admin', component: AdminComponent,
-
         children: [
           { path: 'addemployee', component: AddemployeeComponent }
         ]
       },
+
       {
         path: 'oe', component: OeComponent,
         children: [

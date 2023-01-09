@@ -32,7 +32,7 @@ body {
     background: #6daf83;
     display: grid;
     grid-template-areas: "." ".";
-    width: 500px;
+    width: 550px;
 }
 
 .right-container h1:nth-of-type(1) {

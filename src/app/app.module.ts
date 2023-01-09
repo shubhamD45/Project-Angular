@@ -38,6 +38,9 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +81,8 @@ import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.co
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule
 
   ]
 

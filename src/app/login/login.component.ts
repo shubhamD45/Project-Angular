@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
       this.login(id, password);
     }
 
-
   }
 
 }

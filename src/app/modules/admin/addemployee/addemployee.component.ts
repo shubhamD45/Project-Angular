@@ -19,6 +19,6 @@ export class AddemployeeComponent implements OnInit {
 
   saveEmployee(emp: Employee) {
     this.es.saveEmployee(this.emp).subscribe();
-    console.log(this.emp.birthdate);
+    console.log(this.emp.birthDate);
   }
 }

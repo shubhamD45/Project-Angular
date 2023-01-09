@@ -1,12 +1,12 @@
 export class Employee {
 
-    id: string;
+    eid: string;
     password: string;
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
     role: string;
     profile: any;
     gender: string;
-    birthdate: string;
+    birthDate: string;
     email: string;
 }
