@@ -1,5 +1,5 @@
 <body>
-    <form (ngSubmit)="saveEmployee(emp)">
+    <!-- <form (ngSubmit)="saveEmployee(emp)">
         <div class='signup-container'>
 
             <div class='right-container'>
@@ -91,5 +91,35 @@
             </div>
 
         </div>
+    </form> -->
+
+    <!--Reactive Form Start from here-->
+
+    <form [formGroup]="myForm" (ngSubmit)="saveEmployee()">
+
+
+        <label>First Name</label>
+        <input type="text" id="firstName" formControlName="firstName"><br>
+        <label>Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName"><br>
+        <label>Role</label>
+        <input type="text" id="role" formControlName="role"><br>
+        <label>Gender</label>
+        <input type="text" id="gender" formControlName="gender"><br>
+        <label>Email</label>
+        <input type="text" id="email" formControlName="email"><br>
+        <label>Birt Date</label>
+        <input type="date" id="birthDate" formControlName="birthDate"><br>
+        <label>Password</label>
+        <input type="password" id="password" formControlName="password"><br>
+
+        <input formControlName="profile" id=" profile" type="file" (change)="onFileChange($event)">
+
+        <button type="submit">Submit</button>
+
     </form>
+
+
+
+
 </body>

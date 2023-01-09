@@ -13,12 +13,12 @@ export class EmployeeService {
   emp: Employee = {
     id: '',
     password: '',
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     role: '',
     profile: '',
     gender: '',
-    birthdate: '',
+    birthDate: '',
     email: ''
   }
 
@@ -32,6 +32,10 @@ export class EmployeeService {
 
   public saveEmployee(emp: Employee): Observable<Employee> {
     return this.http.post<Employee>(`${this.url1}`, emp);
+  }
+
+  saveEmployee1(fd: FormData) {
+    return this.http.post(this.url1, fd);
   }
 
 }

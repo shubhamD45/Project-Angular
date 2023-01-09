@@ -26,7 +26,7 @@ import { RegisterComponent } from './modules/re/register/register.component';
 import { UploadDocsComponent } from './modules/re/upload-docs/upload-docs.component';
 import { ViewEnquiryComponent } from './modules/re/view-enquiry/view-enquiry.component';
 import { ModulesComponent } from './modules/modules.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -38,6 +38,13 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +70,7 @@ import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.co
     ViewappComponent,
     SanctionComponent,
     AddemployeeComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -78,8 +86,14 @@ import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.co
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule
 
   ]
 
 })
-export class AppModule { }
+export class AppModule { }  
