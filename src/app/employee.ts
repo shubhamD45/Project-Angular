@@ -1,6 +1,6 @@
 export class Employee {
 
-    id: string;
+    eid: string;
     password: string;
     firstName: string;
     lastName: string;
