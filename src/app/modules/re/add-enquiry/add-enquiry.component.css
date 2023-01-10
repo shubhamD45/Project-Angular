@@ -6,3 +6,7 @@ div {
     padding-bottom: 25px;
     border-radius: 15px;
 }
+
+input {
+    color: rgb(118, 27, 236);
+}

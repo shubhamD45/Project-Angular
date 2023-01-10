@@ -6,25 +6,27 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
   templateUrl: './add-enquiry.component.html',
   styleUrls: ['./add-enquiry.component.css']
 })
-export class AddEnquiryComponent {
-  /*
-  private String customerName;
-  	
-    @Column(name = "pancard")
-    private String pancardNumber;
-  	
-    @Column(name = "mobileno")
-    private long customerMobileNumber;
-  	
-    @Column(name = "emailid")
-    private String customerEmailId;
-  	
-    @Column(name = "Age")
-    private String age;
-  	
-    @Column(name = "status")
-    private String enquiryStatus;
-  */
+export class AddEnquiryComponent implements OnInit {
+
   constructor() { }
+  reactiveForm: FormGroup;
+
+  ngOnInit(): void {
+
+    this.reactiveForm = new FormGroup({
+
+      customername: new FormControl('', Validators.required),
+      pancard: new FormControl('', Validators.required),
+      mobilenumber: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      age: new FormControl('', Validators.required),
+
+    });
+
+  }
+
+  onSubmit() {
+    console.log(this.reactiveForm);
+  }
 }
 

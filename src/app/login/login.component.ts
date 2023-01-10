@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
@@ -11,10 +12,18 @@ import { EmployeeService } from '../employee.service';
 export class LoginComponent implements OnInit {
 
   emp: Employee = new Employee();
-
+  reactive: FormGroup;
   constructor(private es: EmployeeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.reactive = new FormGroup({
+      username: new FormGroup(null, Validators.required),
+      password: new FormGroup('', [Validators.required, Validators.maxLength(5)])
+    });
+  }
+  onsubmit() {
+    console.log(this.reactive);
+    this.ngOnInit();
   }
 
   public login(id: string, password: string) {
