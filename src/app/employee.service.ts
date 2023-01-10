@@ -28,7 +28,9 @@ export class EmployeeService {
     pancardNumber: '',
     customerMobileNumber: 0,
     customerEmailId: '',
-    age: ''
+    age: '',
+    custId: 0,
+    enquiryStatus: ''
   }
 
   constructor(private http: HttpClient) { }
@@ -58,5 +60,9 @@ export class EmployeeService {
 
   saveEnquiry(enq: Enquiry): Observable<Enquiry> {
     return this.http.post<Enquiry>(`${this.url2}`, enq);
+  }
+
+  getAllEnquiry(): Observable<Enquiry[]> {
+    return this.http.get<Enquiry[]>("http://localhost:9011/enquiry/enquiries");
   }
 }
