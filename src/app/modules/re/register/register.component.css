@@ -1,0 +1,18 @@
+
+
+.container {
+    background: #ffffff;
+    display: grid;
+    border-radius: 15px;
+    
+}
+
+.set {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 150px;
+}
+
+input {
+    color: rgb(10, 10, 10);
+  }

@@ -26,7 +26,7 @@ import { RegisterComponent } from './modules/re/register/register.component';
 import { UploadDocsComponent } from './modules/re/upload-docs/upload-docs.component';
 import { ViewEnquiryComponent } from './modules/re/view-enquiry/view-enquiry.component';
 import { ModulesComponent } from './modules/modules.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -40,6 +40,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -82,7 +87,13 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule
 
   ]
 

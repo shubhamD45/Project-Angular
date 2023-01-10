@@ -1,4 +1,110 @@
 <body>
+<form (ngSubmit)="saveEmployee(emp)" [formGroup]="reactiveForm">
+    <div class='right-container'>
+        <header>
+            <h1 style="text-align: center; padding-bottom: 10px;">New Employee</h1>
+
+            <div class='set'>
+                <p>
+                    <mat-form-field appearance="outline" color="ThemePalette">
+                        <mat-label><b>First Name</b></mat-label>
+                        <input matInput="text" [(ngModel)]="emp.firstName" formControlName="firstName" placeholder="First Name" name="firstName" id='firstName'>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>    
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline" color="ThemePalette">
+                        <mat-label><b>Last Name</b></mat-label>
+                        <input matInput="text" [(ngModel)]="emp.lastName" formControlName="lastName" placeholder="Last Name" name="lastName" id='lastName'>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>    
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class='set'>
+
+                <p>
+                    <mat-form-field appearance="outline" color="ThemePalette">
+                        <mat-label><b>Email Id</b></mat-label>
+                        <input matInput="text" [(ngModel)]="emp.email" formControlName="email" placeholder='email' name="email" id='email'>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>    
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" color="ThemePalette">
+                        <mat-label><b>Password</b></mat-label>
+                        <input matInput="password" [(ngModel)]="emp.password" formControlName="password" placeholder='Password' name="password" id='password' >
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>    
+                    </mat-form-field>
+                </p>
+                
+            </div>
+
+            <div class='set'>
+
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label><b>Gender</b></mat-label>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                        <mat-select [(ngModel)]="emp.gender" formControlName="gender" name="gender" id="gender">
+                            <mat-option value="male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                            <mat-option value="Other">Other</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </p>
+                
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label><b>Role</b></mat-label>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                        <mat-select [(ngModel)]="emp.role" formControlName="role" name="role" id="role">
+                            <mat-option value="re">Relational Executive</mat-option>
+                            <mat-option value="oe">Operational Executive</mat-option>
+                            <mat-option value="cm">Credit Manager</mat-option>
+                            <mat-option value="ah">Account Head</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </p>
+                
+            </div>
+
+            <div class="set">
+
+                <p>
+                    <mat-form-field appearance="outline" color="ThemePalette">
+                        <mat-label><b>Birth Date</b></mat-label>
+                        <input matInput="date" [(ngModel)]="emp.birthDate" formControlName="birthDate" placeholder='MM/DD/YYYY' name="birthdate" id='Birthday'>
+                        <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>    
+                    </mat-form-field>
+                </p>
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1" style="text-align: center;"><b>Profile Photo</b></label>
+                    <div>
+                        <input [(ngModel)]="emp.profile" formControlName="profile" name="profile" type="file" class="form-control-file"
+                        id="exampleFormControlFile1">
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        
+        <footer>
+            <div class='set'>
+                
+                <button mat-button type="submit" id='next' >ADD</button>
+                <button mat-button id='back'>BACK</button>
+            </div>
+        </footer>
+    </div>
+</form>
+</body>
+
+
+
+<!-- <body>
     <form (ngSubmit)="saveEmployee(emp)">
             <div class='right-container'>
                 <header>
@@ -88,4 +194,4 @@
 
         
     </form>
-</body>
+</body> -->

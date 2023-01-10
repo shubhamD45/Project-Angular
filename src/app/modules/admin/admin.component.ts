@@ -13,8 +13,6 @@ export class AdminComponent implements OnInit  {
 
   emp : Employee[] ;
  
-  
-  
   constructor(private router:Router , private es:EmployeeService) { }
 
   ngOnInit(): void {
@@ -37,9 +35,5 @@ export class AdminComponent implements OnInit  {
   navigateToAddEmployee() {
     this.router.navigate(['modules/admin/addemployee'])
   }
-
-
-
-
 }
 

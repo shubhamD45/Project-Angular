@@ -26,7 +26,6 @@ table{
     margin-top: 50px;
 }
 
-
 th{
     color: rgb(253, 253, 253);
     border: 2px solid rgb(202, 192, 192);  
@@ -45,7 +44,6 @@ td{
 .mainTable{
     text-align: center;
 }
-
 
 img{
     height: 100px;

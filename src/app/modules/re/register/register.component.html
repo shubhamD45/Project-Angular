@@ -1,0 +1,271 @@
+
+<div class="container">
+    <mat-stepper orientation="vertical">
+        <mat-step>
+          <ng-template matStepLabel>Applicant Information</ng-template>
+          <ng-template matStepContent>
+        
+            <div class="set">
+            <mat-form-field appearance="outline">
+                <mat-label><b>Applicant Name</b></mat-label>
+                <input matInput="text" >
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label><b>Date of Birth</b></mat-label>
+                <input matInput="text" type="date" >
+            </mat-form-field>
+            </div>
+
+            <div class="set">
+                <mat-form-field appearance="fill">
+                    <mat-label><b>Gender</b></mat-label>
+                    <mat-select  name="gender" id="gender">
+                        <mat-option value="male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+                        <mat-option value="Other">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label><b>Maritial Status</b></mat-label>
+                <input matInput="text">
+            </mat-form-field>
+            </div>
+
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Email Id</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Mobile Number</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+            </div>
+            
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Pancard Number</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Adhar Number</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+            </div>
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Loan Amount Required</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+                <button mat-button matStepperNext color="primary">Next</button>
+            </div>
+
+          </ng-template>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Customer Address</ng-template>
+          <ng-template matStepContent>
+
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Area</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label><b>City</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+            </div>
+
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>District</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label><b>State</b></mat-label>
+                    <input matInput="text">
+                </mat-form-field>
+            </div>
+
+            <div class="set">
+                <mat-form-field appearance="outline">
+                    <mat-label><b>Pin Code</b></mat-label>
+                    <input matInput="Number">
+                </mat-form-field>
+                <br>   
+            </div>
+
+            <div class="set">
+                <button mat-button matStepperPrevious color="primary">Back</button>
+                <button mat-button matStepperNext color="primary">Next</button>
+            </div>
+          </ng-template>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Profession</ng-template>
+            <ng-template matStepContent>
+
+                <div class="set">
+                    <mat-form-field appearance="fill">
+                        <mat-label><b>Profession Type</b></mat-label>
+                        <mat-select  name="ptype" id="ptype">
+                            <mat-option value="salarid">Salaried</mat-option>
+                            <mat-option value="self-employed">Self-Employed</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Company Name</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Designation</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Monthly Income</b></mat-label>
+                        <input matInput="text" type="number">
+                    </mat-form-field>
+                </div>
+    
+                <div class="set">
+                    <button mat-button matStepperPrevious color="primary">Back</button>
+                    <button mat-button matStepperNext color="primary">Next</button>
+                </div>
+            </ng-template>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Loan Details</ng-template>
+            <ng-template matStepContent>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Sanction Id</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Loan Amount Required</b></mat-label>
+                        <input matInput="text" type="number">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Tenure</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Expected Emi</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Bank Name</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Account Number</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                  <button mat-button matStepperPrevious color="primary">Back</button>
+                  <button mat-button matStepperNext color="primary">Next</button>
+                </div>
+            </ng-template>
+        </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Guaranter Details</ng-template>
+            <ng-template matStepContent>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Full Name</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Relation</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Mobile Number</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Designation</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <button mat-button matStepperPrevious color="primary">Back</button>
+                    <button mat-button matStepperNext color="primary">Next</button>
+                </div>
+            </ng-template>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Vehicle Information</ng-template>
+            <ng-template matStepContent>
+
+                <div class="set">
+                    <mat-form-field appearance="fill">
+                        <mat-label><b>Vehicle Type</b></mat-label>
+                        <mat-select  name="vtype" id="vtype">
+                            <mat-option value="car">Car</mat-option>
+                            <mat-option value="bike">Bike</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Vehicle Registration Number</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="set">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Purchase Date</b></mat-label>
+                        <input matInput="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Price</b></mat-label>
+                        <input matInput="text" type="number">
+                    </mat-form-field>
+                </div>
+    
+                <div class="set">
+                    <button mat-button matStepperPrevious color="primary">Back</button>
+                    <button mat-button matStepperNext color="primary">Next</button>
+                </div>
+            </ng-template>
+        </mat-step>
+    </mat-stepper>
+</div>

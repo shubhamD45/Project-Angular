@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       this.emp = data;
 
       if (this.emp.role == 're') {
-        this.router.navigate(['modules/re']);
+        this.router.navigate(['modules/re/viewenquiry']);
       } else if (this.emp.role == 'oe') {
         this.router.navigate(['modules/oe']);
       } else if (this.emp.role == 'cm') {
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
 
   navigateToHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(['navigate/home']);
   }
 
   mainLogin(id: string, password: string) {

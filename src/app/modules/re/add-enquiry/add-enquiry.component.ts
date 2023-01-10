@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-enquiry',
@@ -8,8 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class AddEnquiryComponent implements OnInit {
 
   constructor() { }
+  reactiveForm: FormGroup;
 
   ngOnInit(): void {
+
+    this.reactiveForm = new FormGroup({
+
+      customername: new FormControl('', Validators.required),
+      pancard: new FormControl('', [Validators.required, Validators.maxLength(10),Validators.minLength(10)]),
+      mobilenumber: new FormControl('', [Validators.required, Validators.maxLength(10),Validators.minLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      age: new FormControl('', [Validators.required,Validators.min(18)]),
+
+    });
+
+  }
+
+  onSubmit() {
+    console.log(this.reactiveForm);
   }
 
 }

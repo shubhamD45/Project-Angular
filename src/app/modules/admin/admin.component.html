@@ -6,23 +6,21 @@
         </div>
     </mat-drawer>
 
-
     <mat-drawer-content class="main">
         <button (click)="navigateToAddEmployee()" mat-flat-button >+ Add Employee</button>
         <router-outlet></router-outlet>
         <div class="mainTabel" >    
             <table >
                 <thead>
-                    
                     <tr class="trow">
                         <th class="thead">Employee Id</th>
                         <th>Name</th>
                         <th>Email Id</th>
                         <th>Role</th>
-                        <th></th>
-                    </tr>
-              
+                        <th>Action</th>
+                    </tr>              
                 </thead>
+
                 <tbody *ngFor="let e of emp">
                     <tr >
                         <td>{{e.eid}}</td>
@@ -30,10 +28,8 @@
                         <td>{{e.email}}</td>
                         <td>{{e.role}}</td>
                         <td>
-                            <button mat-flat-button >Edit</button>&nbsp;
+                            <button mat-flat-button>Edit</button>&nbsp;
                             <button (click)="deleteEmployee(e.eid)" mat-flat-button color="warn">Delete</button>
-                            
-                            
                         </td>
                     </tr>
                 </tbody>

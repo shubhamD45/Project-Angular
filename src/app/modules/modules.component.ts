@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,13 @@ export class ModulesComponent implements OnInit {
 
   showFiller = false;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToHome(){
+    this,this.router.navigate(['navigate/home']);
   }
 
 }
