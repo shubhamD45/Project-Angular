@@ -16,9 +16,9 @@ export class AddEnquiryComponent implements OnInit {
     this.reactiveForm = new FormGroup({
 
       customername: new FormControl('', Validators.required),
-      pancard: new FormControl('', Validators.required),
-      mobilenumber: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      pancard: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      mobilenumber: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       age: new FormControl('', Validators.required),
 
     });

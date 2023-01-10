@@ -5,32 +5,38 @@
                 <mat-label><b>Customer Name</b></mat-label>
                 <input matInput="text" placeholder="Enter Customer Name" formControlName="customername">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                <mat-error *ngIf="reactiveForm.get('customername').hasError('required')">This field is
+                    required</mat-error>
             </mat-form-field>
         </p>
-
-
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Pancard</b></mat-label>
                 <input matInput="text" placeholder="Placeholder" formControlName="pancard">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                <mat-error *ngIf="reactiveForm.get('pancard').hasError('required')">This field is
+                    required</mat-error>
             </mat-form-field>
-
         </p>
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Mobile Number</b></mat-label>
-                <input matInput="Mobile" placeholder="Placeholder" formControlName="mobilenumber">
+                <input matInput="Mobile" placeholder=" Placeholder" formControlName="mobilenumber">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                <mat-error *ngIf="reactiveForm.get('mobilenumber').hasError('required')">This field is
+                    required</mat-error>
             </mat-form-field>
-
         </p>
-
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Email Address</b></mat-label>
                 <input matInput="Email" placeholder="Placeholder" formControlName="email">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+                <mat-error *ngIf="reactiveForm.get('email').hasError('required')">This field is
+                    required</mat-error>
+                <mat-error *ngIf="reactiveForm.get('email').hasError('email')">This field must contain valid email
+                </mat-error>
+
             </mat-form-field>
         </p>
         <p>
@@ -38,6 +44,9 @@
                 <mat-label><b>Age</b></mat-label>
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
                 <input matInput="Number" class="inp" formControlName="age">
+                <mat-error *ngIf="reactiveForm.get('age').hasError('required')">This field is
+                    required</mat-error>
+
             </mat-form-field>
         </p>
         <p>
