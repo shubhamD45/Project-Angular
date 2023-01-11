@@ -1,5 +1,5 @@
 <body>
-    <!-- <form (ngSubmit)="saveEmployee(emp)">
+    <form (ngSubmit)="saveEmployee(emp)">
         <div class='signup-container'>
 
             <div class='right-container'>
@@ -9,14 +9,12 @@
                     <div class='set'>
                         <div class='pets-name'>
                             <label for='First-Name'><b>First-Name</b></label>
-                            <input [(ngModel)]="emp.firstname" name="firstname" id='First-Name' placeholder="First-Name"
-                                type='text'>
+                            <input [(ngModel)]="emp.firstName" name="firstname" placeholder="First-Name" type='text'>
                         </div>
 
                         <div class='pets-breed'>
                             <label for='Last-Name'><b>Last-Name</b></label>
-                            <input [(ngModel)]="emp.lastname" name="lastname" id='Last-Name' placeholder="Last-Name"
-                                type='text'>
+                            <input [(ngModel)]="emp.lastName" name="lastname" placeholder="Last-Name" type='text'>
                         </div>
 
                     </div>
@@ -25,13 +23,13 @@
                         <div class='pets-weight'>
                             <label for='pet-weight-0-25'><b>Email Address</b></label>
                             <div class='set'>
-                                <input [(ngModel)]="emp.email" name="email" id='email' placeholder='email' type='text'>
+                                <input [(ngModel)]="emp.email" name="email" placeholder='email' type='text'>
                             </div>
                         </div>
                         <div class='pets-weight'>
                             <label for='pet-weight-0-25'><b>Password</b></label>
                             <div class='set'>
-                                <input [(ngModel)]="emp.password" name="password" id='password' placeholder='Password'
+                                <input [(ngModel)]="emp.password" name="password" placeholder='Password'
                                     type='password'>
                             </div>
                         </div>
@@ -42,7 +40,7 @@
                         <div class='pets-gender'>
                             <label for='pet-gender-female'><b>Gender</b></label>
                             <div class='radio-container'>
-                                <select [(ngModel)]="emp.gender" name="gender" id=" inlineFormCustomSelect">
+                                <select [(ngModel)]="emp.gender" name="gender">
                                     <option selected>Gender</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
@@ -53,7 +51,7 @@
                         <div class='pets-spayed-neutered'>
                             <label for='pet-spayed'><b>Employee Role</b></label>
                             <div class="radio-container">
-                                <select [(ngModel)]="emp.role" name="role" id="inputState" class="form-control">
+                                <select [(ngModel)]="emp.role" name="role" class="form-control">
                                     <option selected>Role</option>
                                     <option>Relational Executive</option>
                                     <option>Operational Executive</option>
@@ -67,15 +65,13 @@
 
                         <div class='pets-birthday'>
                             <label for='Birthday'><b>Birth date</b></label>
-                            <input [(ngModel)]="emp.birthdate" name="birthdate" id='Birthday' placeholder='MM/DD/YYYY'
-                                type='date'>
+                            <input [(ngModel)]="emp.birthDate" name="birthdate" placeholder='MM/DD/YYYY' type='date'>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlFile1" style="text-align: center;"><b>Profile
                                     Photo</b></label>
-                            <input [(ngModel)]="emp.profile" name="profile" type="file" class="form-control-file"
-                                id="exampleFormControlFile1">
+                            <input (change)="onchange($event)" type="file" class="form-control-file">
                         </div>
 
                     </div>
@@ -83,19 +79,19 @@
                 </header>
                 <footer>
                     <div class='set'>
-                        <button id='back'>Back</button>
-                        <button type="submit" id='next'>Submit</button>
+                        <button id='back' (click)=" navToAdmin()">Back</button>
+                        <button type="submit" value="upload" id='next'>Submit</button>
                     </div>
                 </footer>
 
             </div>
 
         </div>
-    </form> -->
+    </form>
 
     <!--Reactive Form Start from here-->
 
-    <form [formGroup]="myForm" (ngSubmit)="saveEmployee()">
+    <!-- <form [formGroup]="myForm" (ngSubmit)="saveEmployee()">
 
 
         <label>First Name</label>
@@ -118,7 +114,7 @@
         <button type="submit">Submit</button>
 
     </form>
-
+-->
 
 
 

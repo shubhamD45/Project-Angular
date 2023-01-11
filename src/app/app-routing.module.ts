@@ -30,7 +30,10 @@ import { AddemployeeComponent } from './modules/admin/addemployee/addemployee.co
 const routes: Routes = [
 
   {
-    path: '', component: NavigationbarComponent,
+    path: '', redirectTo: 'navigate/home', pathMatch: 'full'
+  },
+  {
+    path: 'navigate', component: NavigationbarComponent,
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'aboutus', component: AboutUsComponent },

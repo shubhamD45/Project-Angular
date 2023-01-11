@@ -1,7 +1,43 @@
-<div class="input-group">
+<!-- <div class="input-group">
 
     <span class="input-group-btn">
         <button mat-raised-button color="primary">Upload Photo
             <input type="file" class="file-upload" name="myFile" /></button>
     </span>
+    photo,adhar,salaryslip,bankstatement,addressproof
+     
+</div> -->
+
+<div class="container">
+    <form (ngSubmit)="onUpload()">
+        <div class=" file">
+            <label>Upload Photo Here</label>
+            <input type="file" name="photo" (change)="onFileChanged1($event)">
+        </div>
+        <br>
+        <div class="file">
+            <label>Upload Adharcard Here</label>
+            <input type="file" name="adharcard" (change)="onFileChanged1($event)">
+        </div>
+        <br>
+        <div class="file">
+            <label>Upload Pancard Here</label>
+            <input type="file" name="pancard" (change)="onFileChanged1($event)">
+        </div> <br>
+        <div class="file">
+            <label>Upload Salaryslip Here</label>
+            <input type="file" name="salaryslip" (change)="onFileChanged1($event)">
+        </div> <br>
+        <div class="file">
+            <label>Upload Bankstatement Here</label>
+            <input type="file" name="bankstatement" (change)="onFileChanged1($event)">
+        </div> <br>
+        <div class="file">
+            <label>Upload Addressproof Here</label>
+            <input type="file" name="addressproof" (change)="onFileChanged1($event)">
+        </div><br><br>
+        <div class="btn">
+            <button type="submit" value="upload" mat-raised-button color="primary">upload</button>
+        </div>
+    </form>
 </div>

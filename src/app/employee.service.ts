@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Docs } from './docs';
 import { Employee } from './employee';
 import { Enquiry } from './enquiry';
 
@@ -11,13 +12,13 @@ export class EmployeeService {
 
   public url1: string = 'http://localhost:9001/admin/employee';
   public url2: string = 'http://localhost:9011/enquiry/saveEnquiry';
+  public url3: string = 'http://localhost:9001/admin/employee1';
   emp: Employee = {
     eid: '',
     password: '',
     firstName: '',
     lastName: '',
     role: '',
-    profile: '',
     gender: '',
     birthDate: '',
     email: ''
@@ -33,6 +34,7 @@ export class EmployeeService {
     enquiryStatus: ''
   }
 
+
   constructor(private http: HttpClient) { }
 
 
@@ -42,11 +44,8 @@ export class EmployeeService {
   }
 
   saveEmployee(emp: Employee): Observable<Employee> {
-    return this.http.post<Employee>(`${this.url1}`, emp);
-  }
 
-  saveEmployee1(fd: FormData) {
-    return this.http.post(this.url1, fd);
+    return this.http.post<Employee>(this.url1, emp);
   }
 
 
@@ -58,6 +57,10 @@ export class EmployeeService {
     return this.http.delete<any>(`${this.url1}/${id}`);
   }
 
+  deleteEmpPhoto(id: any): Observable<File> {
+    return this.http.delete<any>(`${this.url1}/${id}`);
+  }
+
   saveEnquiry(enq: Enquiry): Observable<Enquiry> {
     return this.http.post<Enquiry>(`${this.url2}`, enq);
   }
@@ -65,4 +68,9 @@ export class EmployeeService {
   getAllEnquiry(): Observable<Enquiry[]> {
     return this.http.get<Enquiry[]>("http://localhost:9011/enquiry/enquiries");
   }
+
+  savedocs(up: FormData): Observable<File> {
+    return this.http.post<File>("http://localhost:9021/REAPI/uploadDocuments", up);
+  }
+
 }

@@ -30,13 +30,13 @@ export class AdminComponent implements OnInit {
   deleteEmployee(eid: string) {
 
     this.es.deleteEmployee(eid).subscribe();
+    this.es.deleteEmpPhoto(eid).subscribe();
     window.location.reload();
   }
 
   navigateToAddEmployee() {
     this.router.navigate(['modules/admin/addemployee'])
   }
-
 
 
 }
