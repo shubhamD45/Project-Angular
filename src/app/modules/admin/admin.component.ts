@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Employee } from 'src/app/employee';
-import { EmployeeService } from 'src/app/employee.service';
+import { Employee } from 'src/app/pojo/employee';
+import { EmployeeService } from 'src/app/shared/employee.service';
+
 
 
 @Component({
@@ -26,9 +27,10 @@ export class AdminComponent implements OnInit  {
     });
   }
 
-  deleteEmployee(eid:string){
-    
+  deleteEmployee(eid: string) {
+
     this.es.deleteEmployee(eid).subscribe();
+    this.es.deleteEmpPhoto(eid).subscribe();
     window.location.reload();
   }
 

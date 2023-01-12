@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from 'src/app/employee';
-import { EmployeeService } from 'src/app/employee.service';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Employee } from 'src/app/pojo/employee';
+import { EmployeeService } from 'src/app/shared/employee.service';
 
 
 @Component({
@@ -12,8 +14,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AddemployeeComponent implements OnInit {
 
   emp: Employee = new Employee();
-
-  constructor(public es: EmployeeService) { }
+  profile : File;
+  constructor(public es: EmployeeService, private router:Router) { }
 
   reactiveForm : FormGroup;
 
@@ -33,9 +35,19 @@ export class AddemployeeComponent implements OnInit {
 
   }
 
+  onchange(event:any){
+    this.profile=event.target.files[0];
+  }
 
   saveEmployee(emp: Employee) {
     this.es.saveEmployee(this.emp).subscribe();
-    console.log(this.emp.birthDate);
+    const up = new FormData();
+    up.append('profile', this.profile,this.profile.name);
+    this.es.savedocs(up).subscribe();
+    this.router.navigate(['modules/admin']); 
+  }
+
+  navigateBack(){
+    this.router.navigate(['modules/admin']);
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Enquiry } from 'src/app/pojo/enquiry';
+import { CustomerService } from 'src/app/shared/customer.service';
 
 @Component({
   selector: 'app-add-enquiry',
@@ -8,7 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddEnquiryComponent implements OnInit {
 
-  constructor() { }
+  enq: Enquiry = new Enquiry();
+
+  constructor(private cs: CustomerService, private router: Router) { }
   reactiveForm: FormGroup;
 
   ngOnInit(): void {
@@ -25,8 +30,10 @@ export class AddEnquiryComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    console.log(this.reactiveForm);
+  saveEnquiry(enq: Enquiry) {
+    this.cs.saveEnquiry(enq).subscribe();
+    
+    this.router.navigate(['modules/re/viewenquiry']);
   }
 
 }

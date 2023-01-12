@@ -75,7 +75,7 @@ body {
 }
 
 .right-container footer #back {
-    background-color: #a3a4a6;
+    background-color: white;
     color: black;
     transition: 0.2s all ease-in-out;
 }
@@ -86,7 +86,7 @@ body {
 }
 
 .right-container footer #next {
-    background-color: #a3a4a6;
+    background-color: white;
     color: black;
     transition: 0.2s all ease-in-out;
 }

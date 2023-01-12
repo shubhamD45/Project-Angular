@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
+import { Employee } from '../pojo/employee';
+import { EmployeeService } from '../shared/employee.service';
+
 
 @Component({
   selector: 'app-login',

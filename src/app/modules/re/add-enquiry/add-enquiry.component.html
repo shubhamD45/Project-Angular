@@ -1,9 +1,10 @@
 <div>
-    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="reactiveForm" (ngSubmit)="saveEnquiry(this.enq)">
         <p>
             <mat-form-field appearance="outline" color="ThemePalette">
                 <mat-label><b>Customer Name</b></mat-label>
-                <input matInput="text" placeholder="Enter Customer Name" formControlName="customername">
+                <input [(ngModel)]="enq.customerName" matInput="text" placeholder="Enter Customer Name"
+                    formControlName="customername">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
                 <mat-error *ngIf="reactiveForm.get('customername').hasError('required')">This field is
                     required</mat-error>
@@ -12,7 +13,8 @@
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Pancard</b></mat-label>
-                <input matInput="text" placeholder="Placeholder" formControlName="pancard">
+                <input [(ngModel)]="enq.pancardNumber" matInput="text" placeholder="Enter pan number"
+                    formControlName="pancard">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
                 <mat-error *ngIf="reactiveForm.get('pancard').hasError('required')">This field is
                     required</mat-error>
@@ -21,7 +23,8 @@
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Mobile Number</b></mat-label>
-                <input matInput="Mobile" placeholder=" Placeholder" formControlName="mobilenumber">
+                <input [(ngModel)]="enq.customerMobileNumber" type="number" matInput="Mobile" placeholder=" Enter mobile number"
+                    formControlName="mobilenumber">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
                 <mat-error *ngIf="reactiveForm.get('mobilenumber').hasError('required')">This field is
                     required</mat-error>
@@ -30,7 +33,8 @@
         <p>
             <mat-form-field appearance="outline">
                 <mat-label><b>Email Address</b></mat-label>
-                <input matInput="Email" placeholder="Placeholder" formControlName="email">
+                <input [(ngModel)]="enq.customerEmailId" matInput="Email" placeholder="Enter email"
+                    formControlName="email">
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
                 <mat-error *ngIf="reactiveForm.get('email').hasError('required')">This field is
                     required</mat-error>
@@ -43,7 +47,8 @@
             <mat-form-field appearance="fill">
                 <mat-label><b>Age</b></mat-label>
                 <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
-                <input matInput="Number" class="inp" formControlName="age">
+                <input [(ngModel)]="enq.age" matInput="Number" type="number" class="inp" formControlName="age"
+                    placeholder="Enter age">
                 <mat-error *ngIf="reactiveForm.get('age').hasError('required')">This field is
                     required</mat-error>
 

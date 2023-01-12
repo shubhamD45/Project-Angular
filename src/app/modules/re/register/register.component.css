@@ -3,8 +3,7 @@
 .container {
     background: #ffffff;
     display: grid;
-    border-radius: 15px;
-    
+    margin-bottom: 50px;   
 }
 
 .set {

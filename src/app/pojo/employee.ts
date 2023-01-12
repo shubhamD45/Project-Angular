@@ -5,7 +5,6 @@ export class Employee {
     firstName: string;
     lastName: string;
     role: string;
-    profile: any;
     gender: string;
     birthDate: string;
     email: string;

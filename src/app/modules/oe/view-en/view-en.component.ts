@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Enquiry } from 'src/app/pojo/enquiry';
+import { CustomerService } from 'src/app/shared/customer.service';
 
 @Component({
   selector: 'app-view-en',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewENComponent implements OnInit {
 
-  constructor() { }
+  enquiry: Enquiry[];
+  enq: Enquiry = new Enquiry();
+
+  cibil:string='get cibil';
+  
+  constructor(private cs: CustomerService) { }
 
   ngOnInit(): void {
+    this.cs.getAllEnquiry().subscribe(data => {
+      this.enquiry = data;
+    });
   }
 
+  getCibil(id:string){
+    this.cs.getCibil(id).subscribe(data =>{
+      this.enq.cibil=data;
+      window.location.reload();
+    });
+  }
+
+  onclick(id:string){
+    this.cs.changeStatus(id).subscribe();
+    window.location.reload();
+
+  }
 }

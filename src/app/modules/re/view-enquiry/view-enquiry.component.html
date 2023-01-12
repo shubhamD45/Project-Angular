@@ -1,0 +1,36 @@
+<div class="mainTabel">
+    <table>
+        <thead>
+
+            <tr class="trow">
+                <th class="thead">Customer Id</th>
+                <th>Customer Name</th>
+                <th>Email Id</th>
+                <th>Pancard</th>
+                <th>Mobile Number</th>
+                <th>Age</th>
+                <th>Enquiry Status</th>
+            </tr>
+
+        </thead>
+        <tbody *ngFor="let e of enq">
+            <tr>
+                <td>{{e.custId}}</td>
+                <td>{{e.customerName}}</td>
+                <td>{{e.customerEmailId}}</td>
+                <td>{{e.pancardNumber}}</td>
+                <td>{{e.customerMobileNumber}}</td>
+                <td>{{e.age}}</td>
+                <td>                    
+                    <ng-container [ngSwitch]="e.enquiryStatus">
+                        <button *ngSwitchCase="'pending'" mat-raised-button style="background-color: orange;">{{e.enquiryStatus}}</button>
+                        <button *ngSwitchCase="'verified'" mat-raised-button style="background-color: green;">Register</button>
+                        <button *ngSwitchCase="'rejected'" mat-raised-button color="warn" disabled="true">{{e.enquiryStatus}}</button>
+                    </ng-container>
+                </td>
+
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

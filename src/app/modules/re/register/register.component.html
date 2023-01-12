@@ -1,5 +1,6 @@
 
 <div class="container">
+    <form [formGroup]="reactiveForm">
     <mat-stepper orientation="vertical">
         <mat-step>
           <ng-template matStepLabel>Applicant Information</ng-template>
@@ -8,58 +9,62 @@
             <div class="set">
             <mat-form-field appearance="outline">
                 <mat-label><b>Applicant Name</b></mat-label>
-                <input matInput="text" >
+                <input matInput="text" [(ngModel)]="this.customer.cName" formControlName="cName">
             </mat-form-field>
             
             <mat-form-field appearance="outline">
                 <mat-label><b>Date of Birth</b></mat-label>
-                <input matInput="text" type="date" >
+                <input matInput="text" type="date" [(ngModel)]="this.customer.birthDate" formControlName="birthDate">
             </mat-form-field>
             </div>
 
             <div class="set">
                 <mat-form-field appearance="fill">
                     <mat-label><b>Gender</b></mat-label>
-                    <mat-select  name="gender" id="gender">
+                    <mat-select [(ngModel)]="this.customer.gender" name="gender" id="gender" formControlName="gender">
                         <mat-option value="male">Male</mat-option>
                         <mat-option value="Female">Female</mat-option>
                         <mat-option value="Other">Other</mat-option>
                     </mat-select>
                 </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label><b>Maritial Status</b></mat-label>
-                <input matInput="text">
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label><b>Maritial Status</b></mat-label>
+                    <mat-select [(ngModel)]="this.customer.maritalStatus" formControlName="maritalStatus">
+                        <mat-option value="Married">Married</mat-option>
+                        <mat-option value="Unmarried">Unmarried</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
 
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>Email Id</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.customer.email" formControlName="email">
                 </mat-form-field>
             
                 <mat-form-field appearance="outline">
                     <mat-label><b>Mobile Number</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" type="number" [(ngModel)]="this.customer.mobile" formControlName="mobile">
                 </mat-form-field>
             </div>
             
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>Pancard Number</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.customer.pan" formControlName="pan">
                 </mat-form-field>
                 <br>
                 <mat-form-field appearance="outline">
                     <mat-label><b>Adhar Number</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.customer.adhar" formControlName="adhar">
                 </mat-form-field>
             </div>
+            
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>Loan Amount Required</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" type="number" [(ngModel)]="this.customer.loanAmount" formControlName="loanAmount">
                 </mat-form-field>
                 <button mat-button matStepperNext color="primary">Next</button>
             </div>
@@ -74,31 +79,31 @@
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>Area</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.adr.area" formControlName="area">
                 </mat-form-field>
                 <br>
                 <mat-form-field appearance="outline">
                     <mat-label><b>City</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.adr.city" formControlName="city">
                 </mat-form-field>
             </div>
 
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>District</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.adr.district" formControlName="district">
                 </mat-form-field>
                 <br>
                 <mat-form-field appearance="outline">
                     <mat-label><b>State</b></mat-label>
-                    <input matInput="text">
+                    <input matInput="text" [(ngModel)]="this.adr.state" formControlName="state">
                 </mat-form-field>
             </div>
 
             <div class="set">
                 <mat-form-field appearance="outline">
                     <mat-label><b>Pin Code</b></mat-label>
-                    <input matInput="Number">
+                    <input matInput="text" type="number" [(ngModel)]="adr.pincode" formControlName="pincode">
                 </mat-form-field>
                 <br>   
             </div>
@@ -117,7 +122,7 @@
                 <div class="set">
                     <mat-form-field appearance="fill">
                         <mat-label><b>Profession Type</b></mat-label>
-                        <mat-select  name="ptype" id="ptype">
+                        <mat-select [(ngModel)]="prf.ptype" name="ptype" id="ptype" formControlName="ptype">
                             <mat-option value="salarid">Salaried</mat-option>
                             <mat-option value="self-employed">Self-Employed</mat-option>
                         </mat-select>
@@ -125,19 +130,19 @@
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Company Name</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="prf.companyName" formControlName="companyName">
                     </mat-form-field>
                 </div>
 
                 <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Designation</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="this.prf.desig" formControlName="desig">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Monthly Income</b></mat-label>
-                        <input matInput="text" type="number">
+                        <input matInput="text" type="number" [(ngModel)]="prf.mIncome" formControlName="mIncome">
                     </mat-form-field>
                 </div>
     
@@ -154,37 +159,26 @@
 
                 <div class="set">
                     <mat-form-field appearance="outline">
-                        <mat-label><b>Sanction Id</b></mat-label>
-                        <input matInput="text">
+                        <mat-label><b>Loan Amount Required</b></mat-label>
+                        <input matInput="text" type="number" [(ngModel)]="ld.expAmount" formControlName="expAmount">
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="outline">
-                        <mat-label><b>Loan Amount Required</b></mat-label>
-                        <input matInput="text" type="number">
-                    </mat-form-field>
-                </div>
-
-                <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Tenure</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="ld.expTenure" formControlName="expTenure">
                     </mat-form-field>
-                    <br>
-                    <mat-form-field appearance="outline">
-                        <mat-label><b>Expected Emi</b></mat-label>
-                        <input matInput="text">
-                    </mat-form-field>
+                    
                 </div>
 
                 <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Bank Name</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="ld.bankName" formControlName="bankName">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Account Number</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" type="number" [(ngModel)]="ld.accNo" formControlName="accNo">
                     </mat-form-field>
                 </div>
 
@@ -202,24 +196,24 @@
                 <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Full Name</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="guar.gName" formControlName="gName">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Relation</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="guar.relation" formControlName="relation">
                     </mat-form-field>
                 </div>
 
                 <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Mobile Number</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" type="number" [(ngModel)]="guar.mobile" formControlName="gmobile">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Designation</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="guar.desig" formControlName="gdesig">
                     </mat-form-field>
                 </div>
 
@@ -237,7 +231,7 @@
                 <div class="set">
                     <mat-form-field appearance="fill">
                         <mat-label><b>Vehicle Type</b></mat-label>
-                        <mat-select  name="vtype" id="vtype">
+                        <mat-select [(ngModel)]="customer.car.modelType" name="vtype" id="vtype" formControlName="modelType">
                             <mat-option value="car">Car</mat-option>
                             <mat-option value="bike">Bike</mat-option>
                         </mat-select>
@@ -245,27 +239,28 @@
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Vehicle Registration Number</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" [(ngModel)]="customer.car.regNo" formControlName="regNo">
                     </mat-form-field>
                 </div>
 
                 <div class="set">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Purchase Date</b></mat-label>
-                        <input matInput="text">
+                        <input matInput="text" type="date" [(ngModel)]="customer.car.purchaseDate" formControlName="purchaseDate">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label><b>Price</b></mat-label>
-                        <input matInput="text" type="number">
+                        <input matInput="text" type="number" [(ngModel)]="customer.car.price" formControlName="price">
                     </mat-form-field>
                 </div>
     
                 <div class="set">
                     <button mat-button matStepperPrevious color="primary">Back</button>
-                    <button mat-button matStepperNext color="primary">Next</button>
+                    <button mat-button matStepperNext color="primary" type="submit" (click)="saveCustomerData(this.customer)">Submit</button>
                 </div>
             </ng-template>
         </mat-step>
     </mat-stepper>
+</form>
 </div>
