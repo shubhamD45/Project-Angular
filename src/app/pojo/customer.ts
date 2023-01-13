@@ -10,25 +10,15 @@ export class Customer {
 	birthDate:string;
 	gender:string;
 	maritalStatus:string;
-	loanAmount:string;
+	loanAmount:number;
 	email:string;
-	mobile:string;
+	mobile:number;
 	pan:string;
 	adhar:string;
     documentStatus:string;
 	address:Address;
 	proff:Profession;
 	loan:LoanDetails;
-	guarantor:Guarantor={
-		gName: "",
-		relation: "",
-		mobile: "",
-		desig: ""
-	};
-	car:CarInfo = {
-		regNo: "",
-		modelType: "",
-		purchaseDate: "",
-		price: ""
-	}
+	guarantor:Guarantor;
+	car:CarInfo;
 }

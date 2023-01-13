@@ -4,5 +4,5 @@ export class Address {
 	city:string;
 	district:string;
 	state:string;
-	pincode:string;
+	pincode:number;
 }

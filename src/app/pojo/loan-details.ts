@@ -1,8 +1,8 @@
 export class LoanDetails {
 
-    expAmount:string;
-	expTenure:string;
+    expAmount:number;
+	expTenure:number;
 	bankName:string;
-	accNo:string;
+	accNo:number;
 	lStatus:string;
 }

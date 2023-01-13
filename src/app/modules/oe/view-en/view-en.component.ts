@@ -22,14 +22,14 @@ export class ViewENComponent implements OnInit {
     });
   }
 
-  getCibil(id:string){
+  getCibil(id:number){
     this.cs.getCibil(id).subscribe(data =>{
       this.enq.cibil=data;
       window.location.reload();
     });
   }
 
-  onclick(id:string){
+  onclick(id:number){
     this.cs.changeStatus(id).subscribe();
     window.location.reload();
 

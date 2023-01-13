@@ -45,6 +45,7 @@ const routes: Routes = [
   {
     path: 'modules', component: ModulesComponent,
     children: [
+      {path:'re', redirectTo:'re/viewenquiry'},
       {
         path: 're', component: ReComponent,
         children: [
@@ -61,7 +62,7 @@ const routes: Routes = [
           { path: 'addemployee', component: AddemployeeComponent }
         ]
       },
-
+      {path:'oe', redirectTo:'oe/viewen'},
       {
         path: 'oe', component: OeComponent,
         children: [

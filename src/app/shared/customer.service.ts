@@ -18,6 +18,10 @@ export class CustomerService {
   public url2: string = 'http://localhost:9011/enquiry/saveEnquiry';
   public url3: string = "http://localhost:9011/enquiry/cibilScore";
   public url4: string = "http://localhost:9011/enquiry/statusChange";
+
+  public urlEnq: string = "http://localhost:9011/enquiry";
+  public urlRe: string = "http://localhost:9021/REAPI";
+
   constructor(private http : HttpClient) { }
 
   customer : Customer = {
@@ -25,9 +29,9 @@ export class CustomerService {
     birthDate: '',
     gender: '',
     maritalStatus: '',
-    loanAmount: '',
+    loanAmount: 0,
     email: '',
-    mobile:'',
+    mobile:0,
     pan: '',
     adhar: '',
     documentStatus: '',
@@ -43,28 +47,28 @@ export class CustomerService {
 	  city:'',
 	  district:'',
 	  state:'',
-	  pincode:''
+	  pincode:0
   }
 
   proff : Profession = {
     ptype:'',
 	  companyName:'',
 	  desig:'',
-	  mIncome:''
+	  mIncome:0
   }
 
   loan : LoanDetails = {
-    expAmount:'',
-	  expTenure:'',
+    expAmount:0,
+	  expTenure:0,
 	  bankName:'',
-	  accNo:'',
+	  accNo:0,
 	  lStatus:''
   }
 
   gurantor : Guarantor = {
     gName:'',
 	  relation:'',
-	  mobile:'',
+	  mobile:0,
 	  desig:''
   }
 
@@ -72,32 +76,33 @@ export class CustomerService {
     regNo:'',
     modelType:'',
     purchaseDate:'',
-    price:''
+    price:0
   }
 
   saveEnquiry(enq: Enquiry): Observable<Enquiry> {
-    return this.http.post<Enquiry>(`${this.url2}`, enq);
+    return this.http.post<Enquiry>(`${this.urlEnq}/saveEnquiry`, enq);
   }
 
   getAllEnquiry(): Observable<Enquiry[]> {
-    return this.http.get<Enquiry[]>("http://localhost:9011/enquiry/enquiries");
+    return this.http.get<Enquiry[]>(`${this.urlEnq}/enquiryList`);
+  }
+
+  getCibil(id:number) : Observable<any> {
+    return this.http.get<any>(`${this.urlEnq}/cibilScore/${id}`);
+  }
+
+  changeStatus(id:number) : Observable<any> {
+    return this.http.get<any>(`${this.urlEnq}/statusChange/${id}`);
   }
 
   public saveCustomerData(customer : Customer) : any {
-    return this.http.post(this.url, customer,{responseType:'text'});
+    return this.http.post(`${this.urlRe}/saveCustomerData`, customer,{responseType:'text'});
   }
 
   savedocs(up: FormData): Observable<File> {
-    return this.http.post<File>("http://localhost:9021/REAPI/uploadDocuments", up);
+    return this.http.post<File>(`${this.urlRe}/uploadDocuments`, up);
   }
 
 
-  getCibil(id:string) : Observable<any> {
-    return this.http.get<any>(`${this.url3}/${id}`);
-  }
-
-  changeStatus(id:String) : Observable<any> {
-    return this.http.get<any>(`${this.url4}/${id}`);
-  }
 
 }

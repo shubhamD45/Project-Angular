@@ -2,7 +2,7 @@ export class Guarantor {
 
     gName:string;
 	relation:string;
-	mobile:string;
+	mobile:number;
 	desig:string;
 }
 

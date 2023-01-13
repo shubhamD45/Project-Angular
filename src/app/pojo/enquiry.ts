@@ -1,6 +1,6 @@
 export class Enquiry {
 
-    custId: string;
+    custId: number;
     customerName: string;
     pancardNumber: string;
     customerMobileNumber: number;

@@ -24,7 +24,7 @@
                 <td>                    
                     <ng-container [ngSwitch]="e.enquiryStatus">
                         <button *ngSwitchCase="'pending'" mat-raised-button style="background-color: orange;">{{e.enquiryStatus}}</button>
-                        <button *ngSwitchCase="'verified'" mat-raised-button style="background-color: green;">Register</button>
+                        <button *ngSwitchCase="'verified'" mat-raised-button style="background-color: green;" (click)="navigateToRegister()">Register</button>
                         <button *ngSwitchCase="'rejected'" mat-raised-button color="warn" disabled="true">{{e.enquiryStatus}}</button>
                     </ng-container>
                 </td>

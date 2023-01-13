@@ -1,14 +1,16 @@
 export class Documents {
 
-    panCard:any;
+	cid:number;
+
+    panCard:any[];
 	
-	photo:any;
+	photo:any[];
 	
-	adharCard:any;
+	adharCard:any[];
 	
-	salarySlips:any;
+	salarySlips:any[];
 	
-	bankStatement:any;
+	bankStatement:any[];
 	
-	addressProof:any;
+	addressProof:any[];
 }

@@ -13,11 +13,11 @@
 
 
         <div class="container">
-            <h3 class="neonText">
+            <h1 style="text-align: center;" class="neonText">
                 Alpha Vehicle Loan <br>
-                <h3>Login Page</h3>
-            </h3>
-            <p class="neonText">Login from here to access.</p>
+                <h3>Employee Login Page</h3>
+            </h1>
+            <p class="neonText" style="text-align: center;">Login from here to access.</p>
 
         </div>
     </div>
@@ -30,22 +30,37 @@
     </div>
     <div class="col-md-6 col-sm-12">
 
-        <div class="login-form">
-
-            <div class="form-group">
-                <label class="text"><b>User Name</b></label>
-                <input type="text" [(ngModel)]="emp.eid" class="form-control" id="id" placeholder="User Name">
-            </div>
-            <div class="form-group">
-                <label class="text"><b>Password</b></label>
-                <input type="password" [(ngModel)]="emp.password" class="form-control" placeholder="Password">
-            </div>
+        <form [formGroup]="reactive" (ngSubmit)="onsubmit()" (ngSubmit)="mainLogin(emp.eid,emp.password)">
+            <p>
+                <mat-form-field appearance="outline" color="ThemePalette">
+                    <mat-label>Enter ID</mat-label>
+                    <input [(ngModel)]="emp.eid" matInput="text" placeholder="Enter Employee ID"
+                        formControlName="username">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-error *ngIf="!reactive.get('username').hasError('username')">This
+                        field
+                        is
+                        required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input [(ngModel)]="emp.password" formControlName="password" matInput
+                        [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!reactive.get('password').hasError('password')">Password must contain 10
+                        elements</mat-error>
+                </mat-form-field>
+            </p>
             <div>
-                <button class="btn btn-black" (click)="mainLogin(emp.eid,emp.password)">Login</button>
+                <button class=" btn btn-black" type="submit">Login</button>
             </div>
 
 
-        </div>
-    </div>
 
-</div>
+        </form>
+    </div>

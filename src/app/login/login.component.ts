@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Employee } from '../pojo/employee';
 import { EmployeeService } from '../shared/employee.service';
@@ -12,10 +13,16 @@ import { EmployeeService } from '../shared/employee.service';
 export class LoginComponent implements OnInit {
 
   emp: Employee = new Employee();
+  reactive: FormGroup;
+  hide: any;
 
   constructor(private es: EmployeeService, private route: ActivatedRoute, private router: Router) { }
-
   ngOnInit(): void {
+    this.reactive = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.maxLength(20)])
+
+    });
   }
 
   public login(id: string, password: string) {
@@ -23,7 +30,7 @@ export class LoginComponent implements OnInit {
       this.emp = data;
 
       if (this.emp.role == 're') {
-        this.router.navigate(['modules/re/viewenquiry']);
+        this.router.navigate(['modules/re']);
       } else if (this.emp.role == 'oe') {
         this.router.navigate(['modules/oe']);
       } else if (this.emp.role == 'cm') {
@@ -36,6 +43,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onsubmit() {
+    console.log(this.reactive);
+    this.ngOnInit();
+
+  }
 
 
   navigateToHome() {

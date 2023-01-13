@@ -27,7 +27,7 @@
                 <td>
                     <ng-container [ngSwitch]="e.enquiryStatus">
                         <button *ngSwitchCase="'pending'" mat-raised-button style="background-color: orange;">{{e.enquiryStatus}}</button>
-                        <button *ngSwitchCase="'eligible'" mat-raised-button style="background-color: green;" (click)="onclick(e.custId)">verify</button>
+                        <button *ngSwitchCase="'eligible'" mat-raised-button style="background-color: rgb(122, 174, 122);" (click)="onclick(e.custId)">verify</button>
                         <button *ngSwitchCase="'verified'" mat-raised-button style="background-color: green;">{{e.enquiryStatus}}</button>
                         <button *ngSwitchCase="'low cibil'" mat-raised-button color="warn" (click)="onclick(e.custId)">Rejection Mail</button>
                         <button *ngSwitchCase="'rejected'" mat-raised-button color="warn" disabled="true">{{e.enquiryStatus}}</button>

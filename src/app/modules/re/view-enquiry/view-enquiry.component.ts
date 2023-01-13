@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Enquiry } from 'src/app/pojo/enquiry';
 import { CustomerService } from 'src/app/shared/customer.service';
-import { EmployeeService } from 'src/app/shared/employee.service';
 
 @Component({
   selector: 'app-view-enquiry',
@@ -12,7 +12,7 @@ export class ViewEnquiryComponent implements OnInit {
 
   
   enq: Enquiry[];
-  constructor(private cs: CustomerService) { }
+  constructor(private cs: CustomerService , private router:Router) { }
 
   ngOnInit(): void {
     this.getAllEnquiry();
@@ -24,7 +24,9 @@ export class ViewEnquiryComponent implements OnInit {
     });
   }
 
-  
+  navigateToRegister(){
+    this.router.navigate(['modules/re/register']);
+  }
 
 
 }
